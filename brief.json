@@ -1,0 +1,304 @@
+{
+  "run_id": "run-1781222003797",
+  "job_index": 3,
+  "params": {
+    "owner_user_id": "user-1774825923424-663",
+    "owner_username": "inso",
+    "owner_display_name": "Inso",
+    "count": 3,
+    "archetype": "calculator",
+    "market": "France",
+    "language": "fr",
+    "country": "FR",
+    "brief": "Un outil financier pour aider les particuliers à prendre des décisions éclairées concernant leur avenir finan…",
+    "notes": "Analysez et comparez les différentes options de plans de retraite complémentaire disponibles en France, en évaluant les rendements potentiels, les frais et les fiscalités.\nAxé sur la complexité des produits financiers de retraite, visant une clientèle française cherchant clarté et comparaison.",
+    "import_notes": "",
+    "growth_job_id": "",
+    "growth_slug": "",
+    "growth_kind": "",
+    "external_site_request_id": "",
+    "external_client_ref": "",
+    "external_source_label": "",
+    "dashboard_mode": "builder",
+    "network_site_format": "forum",
+    "network_primary_topic": "",
+    "network_primary_geo": "",
+    "network_domain_pool": "",
+    "network_hosting_pool": "",
+    "network_dns_strategy": "auto_pool_assign",
+    "network_domain_flow": "manual",
+    "network_content_strategy": "",
+    "network_model_concept": "google/gemini-2.5-flash-lite:nitro",
+    "network_model_seo": "google/gemini-2.5-flash-lite:nitro",
+    "network_model_build": "google/gemini-2.5-flash",
+    "network_model_qa": "anthropic/claude-haiku-4.5",
+    "network_model_growth": "google/gemini-2.5-flash-lite:nitro",
+    "network_blueprint_id": "",
+    "mode": "production",
+    "run_kind": "generated_batch",
+    "publish_target": "render",
+    "requested_publish_target": "render",
+    "provider_space_id": "new-sites",
+    "provider_space_name": "New Sites",
+    "allow_url_fallback": false,
+    "railway_project_id_override": "",
+    "railway_environment_id_override": "",
+    "railway_service_id_override": "",
+    "railway_service_name_override": "",
+    "github_repo_private": false,
+    "stage_models": {
+      "ideation": "google/gemini-2.5-flash-lite:nitro",
+      "spec": "google/gemini-2.5-flash",
+      "copy": "google/gemini-2.5-flash-lite:nitro",
+      "qa": "anthropic/claude-haiku-4.5",
+      "escalation": "anthropic/claude-sonnet-4.6"
+    },
+    "archetype_display": "mixed batch",
+    "archetype_mix": [
+      "tool",
+      "calculator"
+    ],
+    "forced_design_theme": "swiss-signal",
+    "forced_structure_preset": "quick-compare-strip",
+    "site_idea_title": "Comparateur de Régimes de Retraite Complémentaire",
+    "site_idea_summary": "Analysez et comparez les différentes options de plans de retraite complémentaire disponibles en France, en évaluant les rendements potentiels, les frais et les fiscalités."
+  },
+  "site_spec": {
+    "slug": "comparateur-de-regimes-de-retraite-complementaire-3",
+    "theme": {
+      "name": "Swiss Signal",
+      "slug": "swiss-signal",
+      "eyebrow": "Precision Layout",
+      "family": "swiss-signal",
+      "moods": [
+        "clean",
+        "precise",
+        "professional",
+        "trustworthy"
+      ],
+      "archetypes": [
+        "tool",
+        "calculator",
+        "generator"
+      ],
+      "niches": [
+        "finance",
+        "insurance",
+        "comparison",
+        "b2b",
+        "compliance"
+      ],
+      "keywords": [
+        "trust",
+        "precision",
+        "clarity",
+        "comparison",
+        "professional"
+      ],
+      "token_index": [
+        "b2b",
+        "calculator",
+        "clarity",
+        "clean",
+        "comparison",
+        "compliance",
+        "finance",
+        "generator",
+        "insurance",
+        "layout",
+        "precise",
+        "precision",
+        "professional",
+        "signal",
+        "swiss",
+        "tool",
+        "trust",
+        "trustworthy"
+      ],
+      "font_embed": "https://fonts.googleapis.com/css2?family=Syne:wght@400;500;700;800&family=Inter:wght@400;500;600;700&display=swap",
+      "display_font": "\"Syne\", sans-serif",
+      "body_font": "\"Inter\", sans-serif",
+      "layout": "swiss",
+      "card_style": "outline",
+      "button_style": "outline",
+      "decor_style": "grid",
+      "hero_template": "1fr 1fr",
+      "seo_template": "1.45fr 0.55fr",
+      "feature_columns": 3,
+      "faq_columns": 4,
+      "hero_min_height": "78vh",
+      "panel_radius": "28px",
+      "card_radius": "26px",
+      "chip_radius": "999px",
+      "button_radius": "18px",
+      "outline_width": "1px",
+      "backdrop_blur": "0px",
+      "palette": {
+        "bg": "#f8fafc",
+        "surface": "rgba(255,255,255,0.9)",
+        "surface_border": "rgba(15,23,42,0.16)",
+        "text": "#0f172a",
+        "muted": "#475569",
+        "accent": "#ef4444",
+        "accent_alt": "#0f172a",
+        "hero_glow": "rgba(239, 68, 68, 0.12)",
+        "button_text": "#0f172a",
+        "panel_alt": "rgba(248,250,252,0.96)",
+        "shadow": "0 24px 70px rgba(15, 23, 42, 0.08)",
+        "input_fill": "rgba(15,23,42,0.03)"
+      }
+    },
+    "structure": {
+      "name": "Quick Compare Strip",
+      "slug": "quick-compare-strip",
+      "hero_variant": "tool-first",
+      "proof_variant": "metrics",
+      "section_order": [
+        "proof",
+        "features",
+        "faq",
+        "seo"
+      ],
+      "feature_columns": 3,
+      "faq_columns": 2,
+      "family": "compare-strip",
+      "moods": [
+        "direct",
+        "fast",
+        "comparison"
+      ],
+      "archetypes": [
+        "calculator",
+        "tool"
+      ],
+      "niches": [
+        "insurance",
+        "finance",
+        "quotes",
+        "switching"
+      ],
+      "keywords": [
+        "compare",
+        "choices",
+        "fast",
+        "matrix"
+      ],
+      "token_index": [
+        "calculator",
+        "choices",
+        "compare",
+        "comparison",
+        "direct",
+        "faq",
+        "fast",
+        "features",
+        "finance",
+        "first",
+        "insurance",
+        "matrix",
+        "metrics",
+        "proof",
+        "quick",
+        "quotes",
+        "seo",
+        "strip",
+        "switching",
+        "tool"
+      ]
+    },
+    "render_direction": "campaign-slab",
+    "render_direction_name": "Campaign Slab",
+    "page_blueprint": "magazine-fold",
+    "page_blueprint_name": "Magazine Fold",
+    "title": "Comparateur de Régimes de Retraite Complémentaire",
+    "tagline": "Votre Simulateur Personnalisé",
+    "description": "Analysez et comparez les différentes options de plans de retraite complémentaire disponibles en France, en évaluant les rendements potentiels, les frais et les fiscalités.",
+    "feature_prefix": "Bloc",
+    "action": "Utiliser l'outil",
+    "cta_primary": "Comparer les Régimes",
+    "cta_secondary": "Consulter la FAQ",
+    "inputs": [
+      {
+        "id": "amount",
+        "label": "Montant de base",
+        "type": "number",
+        "placeholder": "7500",
+        "weight": 1.0
+      },
+      {
+        "id": "duration",
+        "label": "Durée estimée",
+        "type": "number",
+        "placeholder": "12",
+        "weight": 0.42
+      },
+      {
+        "id": "plan",
+        "label": "Niveau de service",
+        "type": "select",
+        "options": [
+          {
+            "label": "Essentiel",
+            "value": 1.0
+          },
+          {
+            "label": "Performance",
+            "value": 1.18
+          },
+          {
+            "label": "Premium",
+            "value": 1.34
+          }
+        ],
+        "weight": 1.0
+      }
+    ],
+    "hero_metrics": [
+      {
+        "value": "Campaign Slab",
+        "label": "Cadence"
+      },
+      {
+        "value": "3",
+        "label": "Entrées"
+      },
+      {
+        "value": "Résultat recommandé",
+        "label": "Sortie"
+      }
+    ],
+    "trust_labels": [
+      "Campaign Slab",
+      "Comparer les Régimes",
+      "Résultat recommandé",
+      "Utilitaire immédiat",
+      "Structure SEO claire"
+    ],
+    "result_label": "Résultat recommandé",
+    "result_unit": "EUR",
+    "runtime_mode": "tax_calculator",
+    "page_variant": "showcase",
+    "faq_topic": "Comparateur de Régimes de Retraite Complémentaire",
+    "faq_entries": [
+      {
+        "question": "Pourquoi utiliser cet outil pour Comparateur de Régimes de Retraite Complémentaire ?",
+        "answer": "Il aide à cadrer le besoin rapidement et à orienter vers une prochaine action claire sur le marché France."
+      },
+      {
+        "question": "Le résultat est-il immédiat ?",
+        "answer": "Oui. L'interface est pensée pour une réponse rapide, lisible et exploitable dès la première interaction."
+      },
+      {
+        "question": "Cette page est-elle adaptée au SEO ?",
+        "answer": "Oui. La structure mélange utilité, clarté éditoriale et signaux de confiance sans surcharger l'expérience."
+      }
+    ],
+    "seo_paragraphs": [
+      "Cette page capte une intention forte autour de Comparateur de Régimes de Retraite Complémentaire et la transforme en action utile pour un public situé sur France.",
+      "Le format hero-first accélère la compréhension, réduit les frictions et améliore la lisibilité sur mobile comme sur desktop.",
+      "Le socle reste volontairement simple pour faciliter les tests, la QA continue et les variations SEO."
+    ],
+    "document_html": "<!DOCTYPE html>\n<html lang=\"fr\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Comparateur de Régimes de Retraite Complémentaire | Votre Simulateur Personnalisé</title>\n    <meta name=\"description\" content=\"Analysez et comparez les différentes options de plans de retraite complémentaire disponibles en France, en évaluant les rendements potentiels, les frais et les fiscalités.\">\n    <style>\n        :root {\n            --color-primary: #0056b3;\n            --color-secondary: #007bff;\n            --color-accent: #28a745;\n            --color-text: #343a40;\n            --color-background: #f8f9fa;\n            --color-card-bg: rgba(255, 255, 255, 0.85);\n            --color-border: rgba(0, 0, 0, 0.1);\n            --font-family-headline: \"Helvetica Neue\", Arial, sans-serif;\n            --font-family-body: \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif;\n        }\n\n        body {\n            font-family: var(--font-family-body);\n            color: var(--color-text);\n            line-height: 1.6;\n            margin: 0;\n            padding: 0;\n            background-color: var(--color-background);\n            display: flex;\n            flex-direction: column;\n            align-items: center;\n        }\n\n        header {\n            width: 100%;\n            background: linear-gradient(135deg, var(--color-secondary), var(--color-primary));\n            color: white;\n            padding: 4rem 0;\n            text-align: center;\n            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);\n            position: relative;\n            overflow: hidden;\n        }\n        header::before {\n            content: '';\n            position: absolute;\n            top: -50%;\n            left: -50%;\n            width: 200%;\n            height: 200%;\n            background: radial-gradient(circle at center, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);\n            animation: rotate 20s linear infinite;\n        }\n\n        @keyframes rotate {\n            from { transform: rotate(0deg); }\n            to { transform: rotate(360deg); }\n        }\n\n        h1 {\n            font-family: var(--font-family-headline);\n            font-size: 3.5rem;\n            margin-bottom: 0.5rem;\n            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);\n            position: relative;\n            z-index: 1;\n        }\n\n        header p {\n            font-size: 1.25rem;\n            max-width: 800px;\n            margin: 0 auto;\n            position: relative;\n            z-index: 1;\n        }\n\n        .container {\n            width: 90%;\n            max-width: 1100px;\n            margin: 2rem auto;\n            display: grid;\n            gap: 2rem;\n            grid-template-columns: 1fr;\n        }\n\n        @media (min-width: 768px) {\n            .container {\n                grid-template-columns: 2fr 1fr;\n            }\n        }\n\n        section {\n            background: var(--color-card-bg);\n            padding: 2.5rem;\n            border-radius: 12px;\n            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);\n            border: 1px solid var(--color-border);\n            backdrop-filter: blur(5px);\n            -webkit-backdrop-filter: blur(5px);\n            position: relative;\n        }\n        section::before {\n            content: '';\n            position: absolute;\n            inset: -1px;\n            border-radius: 12px;\n            padding: 1px;\n            background: linear-gradient(45deg, rgba(255,255,255,0.2), rgba(255,255,255,0));\n            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);\n            -webkit-mask-composite: xor;\n                    mask-composite: exclude;\n            pointer-events: none;\n        }\n\n\n        h2 {\n            font-family: var(--font-family-headline);\n            color: var(--color-primary);\n            font-size: 2rem;\n            margin-bottom: 1.5rem;\n            border-bottom: 2px solid var(--color-accent);\n            padding-bottom: 0.5rem;\n            display: inline-block;\n        }\n\n        form {\n            display: grid;\n            gap: 1.5rem;\n        }\n\n        .form-group {\n            margin-bottom: 1rem;\n        }\n\n        label {\n            display: block;\n            margin-bottom: 0.6rem;\n            font-weight: bold;\n            color: var(--color-primary);\n        }\n\n        input[type=\"number\"],\n        select {\n            width: calc(100% - 20px);\n            padding: 12px;\n            border: 1px solid var(--color-border);\n            border-radius: 8px;\n            font-size: 1rem;\n            background-color: rgba(255, 255, 255, 0.7);\n            transition: all 0.3s ease;\n        }\n\n        input[type=\"number\"]:focus,\n        select:focus {\n            border-color: var(--color-secondary);\n            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);\n            outline: none;\n        }\n\n        button {\n            background-color: var(--color-accent);\n            color: white;\n            padding: 15px 25px;\n            border: none;\n            border-radius: 8px;\n            font-size: 1.1rem;\n            cursor: pointer;\n            transition: background-color 0.3s ease, transform 0.2s ease;\n            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);\n            font-weight: bold;\n        }\n\n        button:hover {\n            background-color: #218838;\n            transform: translateY(-2px);\n        }\n\n        #tool-result {\n            margin-top: 2rem;\n            padding: 1.5rem;\n            background-color: rgba(230, 247, 255, 0.7);\n            border: 1px solid rgba(0, 123, 255, 0.2);\n            border-radius: 8px;\n            min-height: 100px;\n        }\n\n        #tool-result h3 {\n            color: var(--color-primary);\n            font-size: 1.75rem;\n            margin-top: 0;\n            margin-bottom: 1rem;\n        }\n\n        .result-item {\n            margin-bottom: 1rem;\n            padding-bottom: 1rem;\n            border-bottom: 1px dashed rgba(0, 0, 0, 0.1);\n        }\n        .result-item:last-child {\n            border-bottom: none;\n        }\n        .result-item strong {\n            color: var(--color-secondary);\n        }\n\n        .cta-section {\n            text-align: center;\n            background: linear-gradient(45deg, #e6f7ff, #ffffff);\n            padding: 3rem;\n            margin-top: 2rem;\n            border-radius: 12px;\n            box-shadow: 0 4px 15px rgba(0,0,0,0.08);\n        }\n        .cta-section h2 {\n            color: var(--color-primary);\n            font-size: 2.2rem;\n            margin-bottom: 1.5rem;\n        }\n\n        .info-cards {\n            display: grid;\n            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));\n            gap: 1.5rem;\n            margin-top: 2rem;\n        }\n\n        .info-card {\n            background: var(--color-card-bg);\n            padding: 2rem;\n            border-radius: 12px;\n            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);\n            border: 1px solid var(--color-border);\n            text-align: left;\n            transition: transform 0.3s ease;\n        }\n        .info-card:hover {\n            transform: translateY(-5px);\n        }\n        .info-card h3 {\n            color: var(--color-secondary);\n            font-size: 1.5rem;\n            margin-top: 0;\n            margin-bottom: 1rem;\n        }\n        .info-card p {\n            font-size: 0.95rem;\n        }\n        .info-card a {\n            color: var(--color-accent);\n            text-decoration: none;\n            font-weight: bold;\n        }\n        .info-card a:hover {\n            text-decoration: underline;\n        }\n\n        .seo-section {\n            width: 100%;\n            background-color: #f0f2f5;\n            padding: 3rem 0;\n            text-align: center;\n            margin-top: 4rem;\n            border-top: 1px solid var(--color-border);\n        }\n        .seo-section .container {\n            margin: 0 auto;\n            padding: 0 2rem;\n            max-width: 900px;\n            display: block;\n        }\n        .seo-section h2 {\n            color: var(--color-primary);\n            font-size: 2rem;\n            margin-bottom: 1.5rem;\n            border-bottom: none;\n            padding-bottom: 0;\n        }\n        .seo-section p {\n            text-align: left;\n            margin-bottom: 1.2rem;\n            color: #555;\n        }\n        .seo-section ul {\n            text-align: left;\n            list-style-type: disc;\n            padding-left: 20px;\n            color: #555;\n            margin-bottom: 1.5rem;\n        }\n        .seo-section li {\n            margin-bottom: 0.5rem;\n        }\n        .seo-section a {\n            color: var(--color-secondary);\n            text-decoration: none;\n        }\n        .seo-section a:hover {\n            text-decoration: underline;\n        }\n\n        footer {\n            width: 100%;\n            background-color: var(--color-primary);\n            color: white;\n            text-align: center;\n            padding: 1.5rem 0;\n            margin-top: 2rem;\n            font-size: 0.9rem;\n        }\n    </style>\n    <meta name=\"robots\" content=\"index, follow\">\n    <link rel=\"canonical\" href=\"https://comparateur-de-regimes-de-retraite-complementaire-3.onrender.com\">\n    <meta property=\"og:title\" content=\"Comparateur de Régimes de Retraite Complémentaire\">\n    <meta property=\"og:description\" content=\"Analysez et comparez les différentes options de plans de retraite complémentaire disponibles en France, en évaluant les rendements potentiels, les frais et les fiscalités.\">\n    <meta property=\"og:url\" content=\"https://comparateur-de-regimes-de-retraite-complementaire-3.onrender.com\">\n    <meta property=\"og:type\" content=\"website\">\n    <script type=\"application/ld+json\">{\"@context\": \"https://schema.org\", \"@type\": \"WebApplication\", \"name\": \"Comparateur de Régimes de Retraite Complémentaire\", \"description\": \"Analysez et comparez les différentes options de plans de retraite complémentaire disponibles en France, en évaluant les rendements potentiels, les frais et les fiscalités.\", \"url\": \"https://comparateur-de-regimes-de-retraite-complementaire-3.onrender.com\", \"applicationCategory\": \"UtilityApplication\", \"operatingSystem\": \"Web Browser\"}</script>\n</head>\n<body data-site-slug=\"comparateur-de-regimes-de-retraite-complementaire-3\" data-runtime-mode=\"tax_calculator\">\n    <header>\n        <h1>Simplifiez Votre Retraite Complémentaire en France</h1>\n        <p>Analysez, comparez et choisissez le régime de retraite complémentaire qui correspond le mieux à vos objectifs financiers et à votre profil fiscal.</p>\n    </header>\n\n    <div class=\"container\">\n        <section>\n            <h2>Votre Simulateur Personnalisé</h2>\n            <p>Entrez vos informations pour obtenir une comparaison éclairée des principaux régimes de retraite complémentaire disponibles en France (PER individuel, Madelin, etc.).</p>\n            <form id=\"tool-form\">\n                <div class=\"form-group\">\n                    <label for=\"age\">Votre Âge Actuel (années)</label>\n                    <input type=\"number\" id=\"age\" value=\"35\" min=\"18\" max=\"65\" required>\n                </div>\n                <div class=\"form-group\">\n                    <label for=\"revenuAnnuel\">Revenu Annuel Brut (EUR)</label>\n                    <input type=\"number\" id=\"revenuAnnuel\" value=\"40000\" min=\"10000\" step=\"1000\" required>\n                </div>\n                <div class=\"form-group\">\n                    <label for=\"epargneMensuelle\">Épargne Mensuelle Prévue (EUR)</label>\n                    <input type=\"number\" id=\"epargneMensuelle\" value=\"150\" min=\"10\" step=\"10\" required>\n                </div>\n                <div class=\"form-group\">\n                    <label for=\"horizonRetraite\">Âge de Départ à la Retraite Prévu (années)</label>\n                    <input type=\"number\" id=\"horizonRetraite\" value=\"65\" min=\"55\" max=\"70\" required>\n                </div>\n                <div class=\"form-group\">\n                    <label for=\"tauxImposition\">Tranche d'Imposition Actuelle (%)</label>\n                    <select id=\"tauxImposition\" required>\n                        <option value=\"0\">0%</option>\n                        <option value=\"11\">11%</option>\n                        <option value=\"30\" selected>30%</option>\n                        <option value=\"41\">41%</option>\n                        <option value=\"45\">45%</option>\n                    </select>\n                </div>\n                <button type=\"submit\" id=\"tool-submit\">Comparer les Régimes</button>\n            </form>\n\n            <div id=\"tool-result\">\n                <h3 id=\"result-headline\">Résultats de la Simulation</h3>\n                <p>Vos estimations de rendements potentiels, frais et avantages fiscaux apparaîtront ici après simulation.</p>\n            </div>\n        </section>\n\n        <section>\n            <h2>Pourquoi Comparer ?</h2>\n            <p>Naviguer dans les options de retraite complémentaire en France peut être complexe. Notre outil vous aide à comprendre l'impact de chaque choix sur votre avenir financier, en prenant en compte :</p>\n            <ul>\n                <li><strong>Rendements Potentiels :</strong> Estimez la croissance de votre capital.</li>\n                <li><strong>Frais de Gestion :</strong> Visualisez l'impact des coûts sur votre épargne.</li>\n                <li><strong>Avantages Fiscaux :</strong> Découvrez les économies d'impôts réalisables.</li>\n                <li><strong>Flexibilité :</strong> Comprenez les conditions de sortie et de transfert.</li>\n            </ul>\n            <p>Une décision éclairée aujourd'hui, c'est une retraite plus sereine demain.</p>\n        </section>\n    </div>\n\n    <section class=\"cta-section\">\n        <h2>Préparez Votre Avenir Dès Aujourd'hui</h2>\n        <p>Ne laissez pas la complexité des produits financiers vous freiner. Notre outil est là pour vous donner les clés d'une planification retraite réussie. C'est simple, rapide et adapté à votre situation.</p>\n        <button data-affiliate-slot=\"premium-guide\">Accéder à un guide expert (PDF)</button>\n    </section>\n\n    <div class=\"container info-cards\">\n        <div class=\"info-card\">\n            <h3>PER : Le Nouveau Standard</h3>\n            <p>Découvrez le Plan d'Épargne Retraite (PER), ses avantages fiscaux et sa flexibilité. Est-il fait pour vous ?</p>\n            <a href=\"#\" data-affiliate-slot=\"per-info\">En savoir plus sur le PER</a>\n        </div>\n        <div class=\"info-card\">\n            <h3>Frais et Performances</h3>\n            <p>Comprenez l'importance des frais de gestion et leur impact à long terme sur la performance de votre épargne retraite.</p>\n            <a href=\"#\" data-affiliate-slot=\"fees-performance-info\">Analyser les frais</a>\n        </div>\n        <div class=\"info-card\">\n            <h3>Fiscalité de la Retraite</h3>\n            <p>Maîtrisez la fiscalité à l'entrée et à la sortie de votre épargne retraite pour optimiser votre gain net.</p>\n            <a href=\"#\" data-affiliate-slot=\"tax-info\">Optimiser votre fiscalité</a>\n        </div>\n    </div>\n\n    <section class=\"seo-section\">\n        <div class=\"container\">\n            <h2>Retraite Complémentaire en France : Guide Complet pour Particuliers</h2>\n            <p>Optimiser sa retraite est une préoccupation majeure pour de nombreux Français. Face à la complexité des dispositifs comme le <a href=\"#\">PER (Plan d'Épargne Retraite)</a>, le Madelin ou les contrats d'assurance vie dédiés à la retraite, il est essentiel de disposer d'outils clairs pour faire les meilleurs choix. Notre comparateur en ligne a été conçu pour vous aider à y voir plus clair.</p>\n            <p>Que vous soyez salarié, indépendant, profession libérale ou dirigeant d'entreprise, les options de retraite complémentaire peuvent varier considérablement en termes de:</p>\n            <ul>\n                <li><strong>Rendement potentiel :</strong> Quel sera le capital généré à l'âge de la retraite ?</li>\n                <li><strong>Frais de gestion :</strong> Comment ces coûts impactent-ils la performance réelle de votre épargne ?</li>\n                <li><strong>Avantages fiscaux :</strong> Quelles réductions d'impôts pouvez-vous obtenir à l'entrée et à la sortie du dispositif ?</li>\n                <li><strong>Conditions de sortie :</strong> Capital, rente, déblocage anticipé... Quelles sont les flexibilités offertes ?</li>\n            </ul>\n            <p>Utilisez notre simulateur pour évaluer l'impact de votre âge, de votre revenu annuel, de votre capacité d'épargne et de votre tranche d'imposition sur le rendement futur de votre plan de retraite. Comparez les <a href=\"#\">meilleurs PER individuels</a> du marché, analysez les différences entre un PER assurance et un PER bancaire, et comprenez comment la loi PACTE a simplifié et harmonisé l'épargne retraite en France.</p>\n            <p>Préparez sereinement votre avenir financier en quelques clics et prenez une décision éclairée pour votre retraite.</p>\n        </div>\n    </section>\n\n    <footer>\n        © 2023 Comparateur de Retraite Complémentaire. Tous droits réservés.\n    </footer>\n\n    <script>\n        document.getElementById('tool-form').addEventListener('submit', function(event) {\n            event.preventDefault();\n\n            const age = parseInt(document.getElementById('age').value);\n            const revenuAnnuel = parseInt(document.getElementById('revenuAnnuel').value);\n            const epargneMensuelle = parseInt(document.getElementById('epargneMensuelle').value);\n            const horizonRetraite = parseInt(document.getElementById('horizonRetraite').value);\n            const tauxImposition = parseInt(document.getElementById('tauxImposition').value) / 100;\n\n            const anneesRestantes = horizonRetraite - age;\n            const epargneAnnuelle = epargneMensuelle * 12;\n\n            // Simplistic model for demonstration, not financial advice\n            const rendementMoyenPER = 0.04; // 4% annuel\n            const fraisMoyensPER = 0.01; // 1% annuel sur l'encours\n            const reductionFiscalePER = epargneAnnuelle * tauxImposition; // Hypothèse simple de déduction fiscale à l'entrée\n\n            const rendementMoyenMadelin = 0.035; // 3.5% annuel\n            const fraisMoyensMadelin = 0.015; // 1.5% annuel\n            // La déduction fiscale Madelin est plus complexe, mais on simplifie pour l'exemple\n            const reductionFiscaleMadelin = epargneAnnuelle * tauxImposition * 0.9; // Légèrement moins avantageux pour l'exemple\n\n            let capitalPER = 0;\n            let capitalMadelin = 0;\n            let totalFraisPER = 0;\n            let totalFraisMadelin = 0;\n\n            for (let i = 0; i < anneesRestantes; i++) {\n                capitalPER += epargneAnnuelle;\n                let fraisAnnuelsPER = capitalPER * fraisMoyensPER;\n                capitalPER -= fraisAnnuelsPER;\n                capitalPER *= (1 + rendementMoyenPER);\n                totalFraisPER += fraisAnnuelsPER;\n\n                capitalMadelin += epargneAnnuelle;\n                let fraisAnnuelsMadelin = capitalMadelin * fraisMoyensMadelin;\n                capitalMadelin -= fraisAnnuelsMadelin;\n                capitalMadelin *= (1 + rendementMoyenMadelin);\n                totalFraisMadelin += fraisAnnuelsMadelin;\n            }\n\n            const resultDiv = document.getElementById('tool-result');\n            resultDiv.innerHTML = `\n                <h3>Vos Projections de Retraite</h3>\n                <p>Basé sur vos informations et des hypothèses de marché simplifiées :</p>\n\n                <div class=\"result-item\">\n                    <h4>Plan d'Épargne Retraite (PER)</h4>\n                    <p>Capital estimé à la retraite : <strong>${capitalPER.toLocaleString('fr-FR', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 })}</strong></p>\n                    <p>Frais totaux estimés sur la période : <strong>${totalFraisPER.toLocaleString('fr-FR', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 })}</strong></p>\n                    <p>Réduction fiscale annuelle estimée (entrée) : <strong>${reductionFiscalePER.toLocaleString('fr-FR', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 })}</strong></p>\n                    <p><em>Avantages : Plus de flexibilité à la sortie (capital ou rente), cadre fiscal harmonisé.</em></p>\n                </div>\n\n                <div class=\"result-item\">\n                    <h4>Contrat Madelin (pour Indépendants)</h4>\n                    <p>Capital estimé à la retraite : <strong>${capitalMadelin.toLocaleString('fr-FR', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 })}</strong></p>\n                    <p>Frais totaux estimés sur la période : <strong>${totalFraisMadelin.toLocaleString('fr-FR', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 })}</strong></p>\n                    <p>Réduction fiscale annuelle estimée (entrée) : <strong>${reductionFiscaleMadelin.toLocaleString('fr-FR', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 })}</strong></p>\n                    <p><em>Avantages : Déduction des versements du bénéfice imposable (pour indépendants), rente viagère garantie.</em></p>\n                </div>\n                <p><em>Ces chiffres sont des estimations basées sur des hypothèses simplifiées et ne constituent pas un conseil financier. Les rendements passés ne préjugent pas des rendements futurs.</em></p>\n            `;\n        });\n    </script>\n<div id=\"qa-smoke-result\" hidden></div>\n<script id=\"farmbuilder-affiliate-helper\">\n(function () {\n  window.__UTILITY_AFFILIATE_MAP = window.__UTILITY_AFFILIATE_MAP || {};\n  document.addEventListener(\"click\", function (event) {\n    const target = event.target.closest(\"[data-affiliate-slot]\");\n    if (!target) return;\n    const slot = target.getAttribute(\"data-affiliate-slot\");\n    const href = window.__UTILITY_AFFILIATE_MAP[slot];\n    if (!href) return;\n    if (target.tagName && target.tagName.toLowerCase() === \"a\") {\n      target.setAttribute(\"href\", href);\n      target.removeAttribute(\"rel\");\n      return;\n    }\n    event.preventDefault();\n    window.open(href, \"_blank\");\n  }, true);\n})();\n</script>\n<script id=\"farmbuilder-functional-qa\">\n(function () {\n  function marker() {\n    let node = document.getElementById(\"qa-smoke-result\");\n    if (node) return node;\n    node = document.createElement(\"div\");\n    node.id = \"qa-smoke-result\";\n    node.hidden = true;\n    document.body.appendChild(node);\n    return node;\n  }\n\n  let qaFinished = false;\n  let qaWatchdog = null;\n\n  function normalize(text) {\n    return String(text || \"\").replace(/\\s+/g, \" \").trim();\n  }\n\n  function findForm() {\n    return document.getElementById(\"tool-form\") || document.querySelector(\"form\");\n  }\n\n  function findResult() {\n    return (\n      document.getElementById(\"tool-result\") ||\n      document.querySelector(\"[data-result]\") ||\n      document.querySelector(\".tool-result, .result-card, .result, .results, .output, .preview, .diagnostic, .analysis\")\n    );\n  }\n\n  function primaryAction(form) {\n    if (!form) return null;\n    return (\n      document.getElementById(\"tool-submit\") ||\n      form.querySelector(\"#tool-submit\") ||\n      form.querySelector(\"[data-primary-action]\") ||\n      form.querySelector(\"button[type=submit]\") ||\n      form.querySelector(\"button\") ||\n      form.querySelector(\"input[type=submit]\")\n    );\n  }\n\n  function resultSignature(node) {\n    if (!node) return \"\";\n    const text = normalize(node.textContent);\n    const html = normalize(node.innerHTML).slice(0, 600);\n    return `${text}||${html}`;\n  }\n\n  function resultHeadline(node) {\n    if (!node) return \"\";\n    const heading = node.querySelector(\"h1, h2, h3, strong, b\");\n    return normalize(heading ? heading.textContent : \"\");\n  }\n\n  function sampleText(field) {\n    const key = `${field.id || \"\"} ${field.name || \"\"} ${field.placeholder || \"\"}`.toLowerCase();\n    if (/email/.test(key)) return \"bonjour@example.com\";\n    if (/url|site|website|lien/.test(key)) return \"https://example.com/offre-solaire\";\n    if (/phone|tel|mobile/.test(key)) return \"0612345678\";\n    if (/ville|city|localisation|location|region|departement|postal/.test(key)) return \"Paris\";\n    if (/orientation/.test(key)) return \"sud\";\n    if (/keyword|theme|topic|sujet|subject/.test(key)) return \"energie solaire domestique\";\n    if (/titre|title/.test(key)) return \"Simulateur solaire maison\";\n    if (/nom|name|project/.test(key)) return \"Projet Horizon\";\n    if (/description|notes|content|message/.test(key)) return \"Maison individuelle exposee sud avec toiture exploitable.\";\n    return field.placeholder || \"France\";\n  }\n\n  function sampleNumber(field) {\n    const key = `${field.id || \"\"} ${field.name || \"\"}`.toLowerCase();\n    if (/inclinaison|angle|slope/.test(key)) return \"30\";\n    if (/surface|size|m2|sqm/.test(key)) return \"28\";\n    if (/annee|year/.test(key)) return \"2024\";\n    if (/prix|price|budget|cost|amount|montant/.test(key)) return \"12000\";\n    const min = Number(field.min || \"\");\n    const max = Number(field.max || \"\");\n    if (Number.isFinite(min) && Number.isFinite(max) && max >= min) {\n      return String(Math.min(max, Math.max(min, min + Math.round((max - min) * 0.35))));\n    }\n    if (Number.isFinite(min)) return String(Math.max(min, 12));\n    if (Number.isFinite(max)) return String(Math.min(max, 12));\n    return field.value || \"12\";\n  }\n\n  function applySample(field) {\n    const tag = (field.tagName || \"\").toLowerCase();\n    const type = (field.type || \"\").toLowerCase();\n    if (field.disabled) return;\n    if (type === \"hidden\" || type === \"submit\" || type === \"button\" || type === \"reset\" || type === \"image\" || type === \"file\") {\n      return;\n    }\n    const currentValue = normalize(field.value);\n    if (tag === \"select\") {\n      if (currentValue) return;\n      const option = Array.from(field.options || []).find((item) => item.value && !item.disabled) || field.options[0];\n      if (option) field.value = option.value;\n      return;\n    }\n    if (type === \"checkbox\") {\n      if (field.checked) return;\n      field.checked = true;\n      return;\n    }\n    if (type === \"radio\") {\n      if (field.checked) return;\n      field.checked = true;\n      return;\n    }\n    if (type === \"date\") {\n      if (currentValue) return;\n      field.value = \"2026-03-01\";\n      return;\n    }\n    if (type === \"email\") {\n      if (currentValue) return;\n      field.value = \"bonjour@example.com\";\n      return;\n    }\n    if (type === \"url\") {\n      if (currentValue) return;\n      field.value = \"https://example.com/offre-solaire\";\n      return;\n    }\n    if (type === \"tel\") {\n      if (currentValue) return;\n      field.value = \"0612345678\";\n      return;\n    }\n    if (type === \"color\") {\n      if (currentValue) return;\n      field.value = \"#2f855a\";\n      return;\n    }\n    if (type === \"number\" || type === \"range\") {\n      if (currentValue) return;\n      field.value = sampleNumber(field);\n      return;\n    }\n    if (currentValue) return;\n    field.value = sampleText(field);\n  }\n\n  function stamp(status, detail, headline, primary) {\n    if (qaFinished) return;\n    qaFinished = true;\n    if (qaWatchdog) {\n      window.clearTimeout(qaWatchdog);\n      qaWatchdog = null;\n    }\n    const node = marker();\n    node.dataset.status = status;\n    node.dataset.mode = \"native-form\";\n    node.dataset.detail = detail || \"\";\n    node.dataset.headline = headline || \"\";\n    node.dataset.primary = primary || \"\";\n    node.dataset.viewport = window.innerWidth <= 640 ? \"mobile\" : \"desktop\";\n    window.setTimeout(function () {\n      try {\n        window.stop();\n      } catch (_error) {}\n    }, 0);\n  }\n\n  function installModalGuards() {\n    const noop = function () {};\n    const approve = function () { return true; };\n    const empty = function () { return \"\"; };\n    try { window.alert = noop; } catch (_error) {}\n    try { window.confirm = approve; } catch (_error) {}\n    try { window.prompt = empty; } catch (_error) {}\n  }\n\n  function triggerAction(form, action) {\n    try {\n      if (typeof form.requestSubmit === \"function\") {\n        form.requestSubmit(action || undefined);\n        return;\n      }\n    } catch (_error) {}\n    if (action && typeof action.click === \"function\") {\n      action.click();\n      return;\n    }\n    form.dispatchEvent(new Event(\"submit\", { bubbles: true, cancelable: true }));\n  }\n\n  function inspectResult(before, attemptsLeft) {\n    const result = findResult();\n    if (!result) {\n      stamp(\"fail\", \"La zone de resultat est introuvable.\", \"\");\n      return;\n    }\n    const after = resultSignature(result);\n    const text = normalize(result.textContent);\n    if (after && after !== before && text.length >= 24) {\n      const primary = result.querySelector(\"a[href], button[data-href], [data-primary-url]\") || document.querySelector(\"#tool-result a[href]\");\n      stamp(\"pass\", \"Le formulaire natif a mis a jour la zone de resultat.\", resultHeadline(result), primary ? (primary.getAttribute(\"href\") || primary.getAttribute(\"data-primary-url\") || \"\") : \"\");\n      return;\n    }\n    if (attemptsLeft > 0) {\n      window.setTimeout(function () {\n        inspectResult(before, attemptsLeft - 1);\n      }, 250);\n      return;\n    }\n    stamp(\"fail\", \"La zone de resultat n'a pas renvoye de contenu exploitable.\", resultHeadline(result));\n  }\n\n  function runSmoke() {\n    const params = new URLSearchParams(window.location.search);\n    if (params.get(\"__qa\") !== \"functional\") return;\n    qaWatchdog = window.setTimeout(function () {\n      stamp(\"fail\", \"QA smoke timed out before the page reported a usable result.\", \"\");\n    }, 7000);\n    const form = findForm();\n    if (!form) {\n      stamp(\"fail\", \"Le formulaire principal est introuvable.\", \"\");\n      return;\n    }\n    const result = findResult();\n    const before = resultSignature(result);\n    installModalGuards();\n    try {\n      form.querySelectorAll(\"input, select, textarea\").forEach(applySample);\n    } catch (error) {\n      stamp(\"fail\", error && error.message ? `QA smoke sample failed: ${error.message}` : \"QA smoke sample failed before submit.\", \"\");\n      return;\n    }\n    const action = primaryAction(form);\n    try {\n      triggerAction(form, action);\n    } catch (error) {\n      stamp(\"fail\", error && error.message ? `QA smoke submit failed: ${error.message}` : \"QA smoke submit failed.\", \"\");\n      return;\n    }\n    inspectResult(before, 10);\n  }\n\n  window.addEventListener(\"error\", function (event) {\n    const message = event && event.message ? event.message : \"JavaScript runtime error during QA smoke.\";\n    stamp(\"fail\", `QA smoke JS error: ${message}`, \"\");\n  }, { once: true });\n\n  window.addEventListener(\"unhandledrejection\", function (event) {\n    const reason = event && event.reason;\n    const detail = typeof reason === \"string\"\n      ? reason\n      : reason && reason.message\n        ? reason.message\n        : \"Unhandled promise rejection during QA smoke.\";\n    stamp(\"fail\", `QA smoke rejection: ${detail}`, \"\");\n  }, { once: true });\n\n  if (document.readyState === \"loading\") {\n    document.addEventListener(\"DOMContentLoaded\", function () {\n      window.setTimeout(runSmoke, 60);\n    }, { once: true });\n  } else {\n    window.setTimeout(runSmoke, 60);\n  }\n})();\n</script>\n</body>\n</html>",
+    "generation_mode": "direct_html"
+  }
+}
