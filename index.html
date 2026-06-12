@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparateur de Régimes de Retraite Complémentaire | Votre Simulateur Personnalisé</title>
+    <meta name="description" content="Analysez et comparez les différentes options de plans de retraite complémentaire disponibles en France, en évaluant les rendements potentiels, les frais et les fiscalités.">
+    <style>
+        :root {
+            --color-primary: #0056b3;
+            --color-secondary: #007bff;
+            --color-accent: #28a745;
+            --color-text: #343a40;
+            --color-background: #f8f9fa;
+            --color-card-bg: rgba(255, 255, 255, 0.85);
+            --color-border: rgba(0, 0, 0, 0.1);
+            --font-family-headline: "Helvetica Neue", Arial, sans-serif;
+            --font-family-body: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+
+        body {
+            font-family: var(--font-family-body);
+            color: var(--color-text);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: var(--color-background);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            width: 100%;
+            background: linear-gradient(135deg, var(--color-secondary), var(--color-primary));
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at center, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        h1 {
+            font-family: var(--font-family-headline);
+            font-size: 3.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 1;
+        }
+
+        header p {
+            font-size: 1.25rem;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 2rem auto;
+            display: grid;
+            gap: 2rem;
+            grid-template-columns: 1fr;
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                grid-template-columns: 2fr 1fr;
+            }
+        }
+
+        section {
+            background: var(--color-card-bg);
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+            border: 1px solid var(--color-border);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            position: relative;
+        }
+        section::before {
+            content: '';
+            position: absolute;
+            inset: -1px;
+            border-radius: 12px;
+            padding: 1px;
+            background: linear-gradient(45deg, rgba(255,255,255,0.2), rgba(255,255,255,0));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+                    mask-composite: exclude;
+            pointer-events: none;
+        }
+
+
+        h2 {
+            font-family: var(--font-family-headline);
+            color: var(--color-primary);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--color-accent);
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        form {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.6rem;
+            font-weight: bold;
+            color: var(--color-primary);
+        }
+
+        input[type="number"],
+        select {
+            width: calc(100% - 20px);
+            padding: 12px;
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            font-size: 1rem;
+            background-color: rgba(255, 255, 255, 0.7);
+            transition: all 0.3s ease;
+        }
+
+        input[type="number"]:focus,
+        select:focus {
+            border-color: var(--color-secondary);
+            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+            outline: none;
+        }
+
+        button {
+            background-color: var(--color-accent);
+            color: white;
+            padding: 15px 25px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #218838;
+            transform: translateY(-2px);
+        }
+
+        #tool-result {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background-color: rgba(230, 247, 255, 0.7);
+            border: 1px solid rgba(0, 123, 255, 0.2);
+            border-radius: 8px;
+            min-height: 100px;
+        }
+
+        #tool-result h3 {
+            color: var(--color-primary);
+            font-size: 1.75rem;
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
+        .result-item {
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
+        }
+        .result-item:last-child {
+            border-bottom: none;
+        }
+        .result-item strong {
+            color: var(--color-secondary);
+        }
+
+        .cta-section {
+            text-align: center;
+            background: linear-gradient(45deg, #e6f7ff, #ffffff);
+            padding: 3rem;
+            margin-top: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+        .cta-section h2 {
+            color: var(--color-primary);
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .info-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .info-card {
+            background: var(--color-card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--color-border);
+            text-align: left;
+            transition: transform 0.3s ease;
+        }
+        .info-card:hover {
+            transform: translateY(-5px);
+        }
+        .info-card h3 {
+            color: var(--color-secondary);
+            font-size: 1.5rem;
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+        .info-card p {
+            font-size: 0.95rem;
+        }
+        .info-card a {
+            color: var(--color-accent);
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .info-card a:hover {
+            text-decoration: underline;
+        }
+
+        .seo-section {
+            width: 100%;
+            background-color: #f0f2f5;
+            padding: 3rem 0;
+            text-align: center;
+            margin-top: 4rem;
+            border-top: 1px solid var(--color-border);
+        }
+        .seo-section .container {
+            margin: 0 auto;
+            padding: 0 2rem;
+            max-width: 900px;
+            display: block;
+        }
+        .seo-section h2 {
+            color: var(--color-primary);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        .seo-section p {
+            text-align: left;
+            margin-bottom: 1.2rem;
+            color: #555;
+        }
+        .seo-section ul {
+            text-align: left;
+            list-style-type: disc;
+            padding-left: 20px;
+            color: #555;
+            margin-bottom: 1.5rem;
+        }
+        .seo-section li {
+            margin-bottom: 0.5rem;
+        }
+        .seo-section a {
+            color: var(--color-secondary);
+            text-decoration: none;
+        }
+        .seo-section a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            width: 100%;
+            background-color: var(--color-primary);
+            color: white;
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 2rem;
+            font-size: 0.9rem;
+        }
+    </style>
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://comparateur-de-regimes-de-retraite-complementaire-3.onrender.com">
+    <meta property="og:title" content="Comparateur de Régimes de Retraite Complémentaire">
+    <meta property="og:description" content="Analysez et comparez les différentes options de plans de retraite complémentaire disponibles en France, en évaluant les rendements potentiels, les frais et les fiscalités.">
+    <meta property="og:url" content="https://comparateur-de-regimes-de-retraite-complementaire-3.onrender.com">
+    <meta property="og:type" content="website">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Comparateur de Régimes de Retraite Complémentaire", "description": "Analysez et comparez les différentes options de plans de retraite complémentaire disponibles en France, en évaluant les rendements potentiels, les frais et les fiscalités.", "url": "https://comparateur-de-regimes-de-retraite-complementaire-3.onrender.com", "applicationCategory": "UtilityApplication", "operatingSystem": "Web Browser"}</script>
+</head>
+<body data-site-slug="comparateur-de-regimes-de-retraite-complementaire-3" data-runtime-mode="tax_calculator">
+    <header>
+        <h1>Simplifiez Votre Retraite Complémentaire en France</h1>
+        <p>Analysez, comparez et choisissez le régime de retraite complémentaire qui correspond le mieux à vos objectifs financiers et à votre profil fiscal.</p>
+    </header>
+
+    <div class="container">
+        <section>
+            <h2>Votre Simulateur Personnalisé</h2>
+            <p>Entrez vos informations pour obtenir une comparaison éclairée des principaux régimes de retraite complémentaire disponibles en France (PER individuel, Madelin, etc.).</p>
+            <form id="tool-form">
+                <div class="form-group">
+                    <label for="age">Votre Âge Actuel (années)</label>
+                    <input type="number" id="age" value="35" min="18" max="65" required>
+                </div>
+                <div class="form-group">
+                    <label for="revenuAnnuel">Revenu Annuel Brut (EUR)</label>
+                    <input type="number" id="revenuAnnuel" value="40000" min="10000" step="1000" required>
+                </div>
+                <div class="form-group">
+                    <label for="epargneMensuelle">Épargne Mensuelle Prévue (EUR)</label>
+                    <input type="number" id="epargneMensuelle" value="150" min="10" step="10" required>
+                </div>
+                <div class="form-group">
+                    <label for="horizonRetraite">Âge de Départ à la Retraite Prévu (années)</label>
+                    <input type="number" id="horizonRetraite" value="65" min="55" max="70" required>
+                </div>
+                <div class="form-group">
+                    <label for="tauxImposition">Tranche d'Imposition Actuelle (%)</label>
+                    <select id="tauxImposition" required>
+                        <option value="0">0%</option>
+                        <option value="11">11%</option>
+                        <option value="30" selected>30%</option>
+                        <option value="41">41%</option>
+                        <option value="45">45%</option>
+                    </select>
+                </div>
+                <button type="submit" id="tool-submit">Comparer les Régimes</button>
+            </form>
+
+            <div id="tool-result">
+                <h3 id="result-headline">Résultats de la Simulation</h3>
+                <p>Vos estimations de rendements potentiels, frais et avantages fiscaux apparaîtront ici après simulation.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Pourquoi Comparer ?</h2>
+            <p>Naviguer dans les options de retraite complémentaire en France peut être complexe. Notre outil vous aide à comprendre l'impact de chaque choix sur votre avenir financier, en prenant en compte :</p>
+            <ul>
+                <li><strong>Rendements Potentiels :</strong> Estimez la croissance de votre capital.</li>
+                <li><strong>Frais de Gestion :</strong> Visualisez l'impact des coûts sur votre épargne.</li>
+                <li><strong>Avantages Fiscaux :</strong> Découvrez les économies d'impôts réalisables.</li>
+                <li><strong>Flexibilité :</strong> Comprenez les conditions de sortie et de transfert.</li>
+            </ul>
+            <p>Une décision éclairée aujourd'hui, c'est une retraite plus sereine demain.</p>
+        </section>
+    </div>
+
+    <section class="cta-section">
+        <h2>Préparez Votre Avenir Dès Aujourd'hui</h2>
+        <p>Ne laissez pas la complexité des produits financiers vous freiner. Notre outil est là pour vous donner les clés d'une planification retraite réussie. C'est simple, rapide et adapté à votre situation.</p>
+        <button data-affiliate-slot="premium-guide">Accéder à un guide expert (PDF)</button>
+    </section>
+
+    <div class="container info-cards">
+        <div class="info-card">
+            <h3>PER : Le Nouveau Standard</h3>
+            <p>Découvrez le Plan d'Épargne Retraite (PER), ses avantages fiscaux et sa flexibilité. Est-il fait pour vous ?</p>
+            <a href="#" data-affiliate-slot="per-info">En savoir plus sur le PER</a>
+        </div>
+        <div class="info-card">
+            <h3>Frais et Performances</h3>
+            <p>Comprenez l'importance des frais de gestion et leur impact à long terme sur la performance de votre épargne retraite.</p>
+            <a href="#" data-affiliate-slot="fees-performance-info">Analyser les frais</a>
+        </div>
+        <div class="info-card">
+            <h3>Fiscalité de la Retraite</h3>
+            <p>Maîtrisez la fiscalité à l'entrée et à la sortie de votre épargne retraite pour optimiser votre gain net.</p>
+            <a href="#" data-affiliate-slot="tax-info">Optimiser votre fiscalité</a>
+        </div>
+    </div>
+
+    <section class="seo-section">
+        <div class="container">
+            <h2>Retraite Complémentaire en France : Guide Complet pour Particuliers</h2>
+            <p>Optimiser sa retraite est une préoccupation majeure pour de nombreux Français. Face à la complexité des dispositifs comme le <a href="#">PER (Plan d'Épargne Retraite)</a>, le Madelin ou les contrats d'assurance vie dédiés à la retraite, il est essentiel de disposer d'outils clairs pour faire les meilleurs choix. Notre comparateur en ligne a été conçu pour vous aider à y voir plus clair.</p>
+            <p>Que vous soyez salarié, indépendant, profession libérale ou dirigeant d'entreprise, les options de retraite complémentaire peuvent varier considérablement en termes de:</p>
+            <ul>
+                <li><strong>Rendement potentiel :</strong> Quel sera le capital généré à l'âge de la retraite ?</li>
+                <li><strong>Frais de gestion :</strong> Comment ces coûts impactent-ils la performance réelle de votre épargne ?</li>
+                <li><strong>Avantages fiscaux :</strong> Quelles réductions d'impôts pouvez-vous obtenir à l'entrée et à la sortie du dispositif ?</li>
+                <li><strong>Conditions de sortie :</strong> Capital, rente, déblocage anticipé... Quelles sont les flexibilités offertes ?</li>
+            </ul>
+            <p>Utilisez notre simulateur pour évaluer l'impact de votre âge, de votre revenu annuel, de votre capacité d'épargne et de votre tranche d'imposition sur le rendement futur de votre plan de retraite. Comparez les <a href="#">meilleurs PER individuels</a> du marché, analysez les différences entre un PER assurance et un PER bancaire, et comprenez comment la loi PACTE a simplifié et harmonisé l'épargne retraite en France.</p>
+            <p>Préparez sereinement votre avenir financier en quelques clics et prenez une décision éclairée pour votre retraite.</p>
+        </div>
+    </section>
+
+    <footer>
+        © 2023 Comparateur de Retraite Complémentaire. Tous droits réservés.
+    </footer>
+
+    <script>
+        document.getElementById('tool-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const age = parseInt(document.getElementById('age').value);
+            const revenuAnnuel = parseInt(document.getElementById('revenuAnnuel').value);
+            const epargneMensuelle = parseInt(document.getElementById('epargneMensuelle').value);
+            const horizonRetraite = parseInt(document.getElementById('horizonRetraite').value);
+            const tauxImposition = parseInt(document.getElementById('tauxImposition').value) / 100;
+
+            const anneesRestantes = horizonRetraite - age;
+            const epargneAnnuelle = epargneMensuelle * 12;
+
+            // Simplistic model for demonstration, not financial advice
+            const rendementMoyenPER = 0.04; // 4% annuel
+            const fraisMoyensPER = 0.01; // 1% annuel sur l'encours
+            const reductionFiscalePER = epargneAnnuelle * tauxImposition; // Hypothèse simple de déduction fiscale à l'entrée
+
+            const rendementMoyenMadelin = 0.035; // 3.5% annuel
+            const fraisMoyensMadelin = 0.015; // 1.5% annuel
+            // La déduction fiscale Madelin est plus complexe, mais on simplifie pour l'exemple
+            const reductionFiscaleMadelin = epargneAnnuelle * tauxImposition * 0.9; // Légèrement moins avantageux pour l'exemple
+
+            let capitalPER = 0;
+            let capitalMadelin = 0;
+            let totalFraisPER = 0;
+            let totalFraisMadelin = 0;
+
+            for (let i = 0; i < anneesRestantes; i++) {
+                capitalPER += epargneAnnuelle;
+                let fraisAnnuelsPER = capitalPER * fraisMoyensPER;
+                capitalPER -= fraisAnnuelsPER;
+                capitalPER *= (1 + rendementMoyenPER);
+                totalFraisPER += fraisAnnuelsPER;
+
+                capitalMadelin += epargneAnnuelle;
+                let fraisAnnuelsMadelin = capitalMadelin * fraisMoyensMadelin;
+                capitalMadelin -= fraisAnnuelsMadelin;
+                capitalMadelin *= (1 + rendementMoyenMadelin);
+                totalFraisMadelin += fraisAnnuelsMadelin;
+            }
+
+            const resultDiv = document.getElementById('tool-result');
+            resultDiv.innerHTML = `
+                <h3>Vos Projections de Retraite</h3>
+                <p>Basé sur vos informations et des hypothèses de marché simplifiées :</p>
+
+                <div class="result-item">
+                    <h4>Plan d'Épargne Retraite (PER)</h4>
+                    <p>Capital estimé à la retraite : <strong>${capitalPER.toLocaleString('fr-FR', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 })}</strong></p>
+                    <p>Frais totaux estimés sur la période : <strong>${totalFraisPER.toLocaleString('fr-FR', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 })}</strong></p>
+                    <p>Réduction fiscale annuelle estimée (entrée) : <strong>${reductionFiscalePER.toLocaleString('fr-FR', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 })}</strong></p>
+                    <p><em>Avantages : Plus de flexibilité à la sortie (capital ou rente), cadre fiscal harmonisé.</em></p>
+                </div>
+
+                <div class="result-item">
+                    <h4>Contrat Madelin (pour Indépendants)</h4>
+                    <p>Capital estimé à la retraite : <strong>${capitalMadelin.toLocaleString('fr-FR', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 })}</strong></p>
+                    <p>Frais totaux estimés sur la période : <strong>${totalFraisMadelin.toLocaleString('fr-FR', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 })}</strong></p>
+                    <p>Réduction fiscale annuelle estimée (entrée) : <strong>${reductionFiscaleMadelin.toLocaleString('fr-FR', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 })}</strong></p>
+                    <p><em>Avantages : Déduction des versements du bénéfice imposable (pour indépendants), rente viagère garantie.</em></p>
+                </div>
+                <p><em>Ces chiffres sont des estimations basées sur des hypothèses simplifiées et ne constituent pas un conseil financier. Les rendements passés ne préjugent pas des rendements futurs.</em></p>
+            `;
+        });
+    </script>
+<div id="qa-smoke-result" hidden></div>
+<script id="farmbuilder-affiliate-helper">
+(function () {
+  window.__UTILITY_AFFILIATE_MAP = window.__UTILITY_AFFILIATE_MAP || {};
+  document.addEventListener("click", function (event) {
+    const target = event.target.closest("[data-affiliate-slot]");
+    if (!target) return;
+    const slot = target.getAttribute("data-affiliate-slot");
+    const href = window.__UTILITY_AFFILIATE_MAP[slot];
+    if (!href) return;
+    if (target.tagName && target.tagName.toLowerCase() === "a") {
+      target.setAttribute("href", href);
+      target.removeAttribute("rel");
+      return;
+    }
+    event.preventDefault();
+    window.open(href, "_blank");
+  }, true);
+})();
+</script>
+<script id="farmbuilder-functional-qa">
+(function () {
+  function marker() {
+    let node = document.getElementById("qa-smoke-result");
+    if (node) return node;
+    node = document.createElement("div");
+    node.id = "qa-smoke-result";
+    node.hidden = true;
+    document.body.appendChild(node);
+    return node;
+  }
+
+  let qaFinished = false;
+  let qaWatchdog = null;
+
+  function normalize(text) {
+    return String(text || "").replace(/\s+/g, " ").trim();
+  }
+
+  function findForm() {
+    return document.getElementById("tool-form") || document.querySelector("form");
+  }
+
+  function findResult() {
+    return (
+      document.getElementById("tool-result") ||
+      document.querySelector("[data-result]") ||
+      document.querySelector(".tool-result, .result-card, .result, .results, .output, .preview, .diagnostic, .analysis")
+    );
+  }
+
+  function primaryAction(form) {
+    if (!form) return null;
+    return (
+      document.getElementById("tool-submit") ||
+      form.querySelector("#tool-submit") ||
+      form.querySelector("[data-primary-action]") ||
+      form.querySelector("button[type=submit]") ||
+      form.querySelector("button") ||
+      form.querySelector("input[type=submit]")
+    );
+  }
+
+  function resultSignature(node) {
+    if (!node) return "";
+    const text = normalize(node.textContent);
+    const html = normalize(node.innerHTML).slice(0, 600);
+    return `${text}||${html}`;
+  }
+
+  function resultHeadline(node) {
+    if (!node) return "";
+    const heading = node.querySelector("h1, h2, h3, strong, b");
+    return normalize(heading ? heading.textContent : "");
+  }
+
+  function sampleText(field) {
+    const key = `${field.id || ""} ${field.name || ""} ${field.placeholder || ""}`.toLowerCase();
+    if (/email/.test(key)) return "bonjour@example.com";
+    if (/url|site|website|lien/.test(key)) return "https://example.com/offre-solaire";
+    if (/phone|tel|mobile/.test(key)) return "0612345678";
+    if (/ville|city|localisation|location|region|departement|postal/.test(key)) return "Paris";
+    if (/orientation/.test(key)) return "sud";
+    if (/keyword|theme|topic|sujet|subject/.test(key)) return "energie solaire domestique";
+    if (/titre|title/.test(key)) return "Simulateur solaire maison";
+    if (/nom|name|project/.test(key)) return "Projet Horizon";
+    if (/description|notes|content|message/.test(key)) return "Maison individuelle exposee sud avec toiture exploitable.";
+    return field.placeholder || "France";
+  }
+
+  function sampleNumber(field) {
+    const key = `${field.id || ""} ${field.name || ""}`.toLowerCase();
+    if (/inclinaison|angle|slope/.test(key)) return "30";
+    if (/surface|size|m2|sqm/.test(key)) return "28";
+    if (/annee|year/.test(key)) return "2024";
+    if (/prix|price|budget|cost|amount|montant/.test(key)) return "12000";
+    const min = Number(field.min || "");
+    const max = Number(field.max || "");
+    if (Number.isFinite(min) && Number.isFinite(max) && max >= min) {
+      return String(Math.min(max, Math.max(min, min + Math.round((max - min) * 0.35))));
+    }
+    if (Number.isFinite(min)) return String(Math.max(min, 12));
+    if (Number.isFinite(max)) return String(Math.min(max, 12));
+    return field.value || "12";
+  }
+
+  function applySample(field) {
+    const tag = (field.tagName || "").toLowerCase();
+    const type = (field.type || "").toLowerCase();
+    if (field.disabled) return;
+    if (type === "hidden" || type === "submit" || type === "button" || type === "reset" || type === "image" || type === "file") {
+      return;
+    }
+    const currentValue = normalize(field.value);
+    if (tag === "select") {
+      if (currentValue) return;
+      const option = Array.from(field.options || []).find((item) => item.value && !item.disabled) || field.options[0];
+      if (option) field.value = option.value;
+      return;
+    }
+    if (type === "checkbox") {
+      if (field.checked) return;
+      field.checked = true;
+      return;
+    }
+    if (type === "radio") {
+      if (field.checked) return;
+      field.checked = true;
+      return;
+    }
+    if (type === "date") {
+      if (currentValue) return;
+      field.value = "2026-03-01";
+      return;
+    }
+    if (type === "email") {
+      if (currentValue) return;
+      field.value = "bonjour@example.com";
+      return;
+    }
+    if (type === "url") {
+      if (currentValue) return;
+      field.value = "https://example.com/offre-solaire";
+      return;
+    }
+    if (type === "tel") {
+      if (currentValue) return;
+      field.value = "0612345678";
+      return;
+    }
+    if (type === "color") {
+      if (currentValue) return;
+      field.value = "#2f855a";
+      return;
+    }
+    if (type === "number" || type === "range") {
+      if (currentValue) return;
+      field.value = sampleNumber(field);
+      return;
+    }
+    if (currentValue) return;
+    field.value = sampleText(field);
+  }
+
+  function stamp(status, detail, headline, primary) {
+    if (qaFinished) return;
+    qaFinished = true;
+    if (qaWatchdog) {
+      window.clearTimeout(qaWatchdog);
+      qaWatchdog = null;
+    }
+    const node = marker();
+    node.dataset.status = status;
+    node.dataset.mode = "native-form";
+    node.dataset.detail = detail || "";
+    node.dataset.headline = headline || "";
+    node.dataset.primary = primary || "";
+    node.dataset.viewport = window.innerWidth <= 640 ? "mobile" : "desktop";
+    window.setTimeout(function () {
+      try {
+        window.stop();
+      } catch (_error) {}
+    }, 0);
+  }
+
+  function installModalGuards() {
+    const noop = function () {};
+    const approve = function () { return true; };
+    const empty = function () { return ""; };
+    try { window.alert = noop; } catch (_error) {}
+    try { window.confirm = approve; } catch (_error) {}
+    try { window.prompt = empty; } catch (_error) {}
+  }
+
+  function triggerAction(form, action) {
+    try {
+      if (typeof form.requestSubmit === "function") {
+        form.requestSubmit(action || undefined);
+        return;
+      }
+    } catch (_error) {}
+    if (action && typeof action.click === "function") {
+      action.click();
+      return;
+    }
+    form.dispatchEvent(new Event("submit", { bubbles: true, cancelable: true }));
+  }
+
+  function inspectResult(before, attemptsLeft) {
+    const result = findResult();
+    if (!result) {
+      stamp("fail", "La zone de resultat est introuvable.", "");
+      return;
+    }
+    const after = resultSignature(result);
+    const text = normalize(result.textContent);
+    if (after && after !== before && text.length >= 24) {
+      const primary = result.querySelector("a[href], button[data-href], [data-primary-url]") || document.querySelector("#tool-result a[href]");
+      stamp("pass", "Le formulaire natif a mis a jour la zone de resultat.", resultHeadline(result), primary ? (primary.getAttribute("href") || primary.getAttribute("data-primary-url") || "") : "");
+      return;
+    }
+    if (attemptsLeft > 0) {
+      window.setTimeout(function () {
+        inspectResult(before, attemptsLeft - 1);
+      }, 250);
+      return;
+    }
+    stamp("fail", "La zone de resultat n'a pas renvoye de contenu exploitable.", resultHeadline(result));
+  }
+
+  function runSmoke() {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("__qa") !== "functional") return;
+    qaWatchdog = window.setTimeout(function () {
+      stamp("fail", "QA smoke timed out before the page reported a usable result.", "");
+    }, 7000);
+    const form = findForm();
+    if (!form) {
+      stamp("fail", "Le formulaire principal est introuvable.", "");
+      return;
+    }
+    const result = findResult();
+    const before = resultSignature(result);
+    installModalGuards();
+    try {
+      form.querySelectorAll("input, select, textarea").forEach(applySample);
+    } catch (error) {
+      stamp("fail", error && error.message ? `QA smoke sample failed: ${error.message}` : "QA smoke sample failed before submit.", "");
+      return;
+    }
+    const action = primaryAction(form);
+    try {
+      triggerAction(form, action);
+    } catch (error) {
+      stamp("fail", error && error.message ? `QA smoke submit failed: ${error.message}` : "QA smoke submit failed.", "");
+      return;
+    }
+    inspectResult(before, 10);
+  }
+
+  window.addEventListener("error", function (event) {
+    const message = event && event.message ? event.message : "JavaScript runtime error during QA smoke.";
+    stamp("fail", `QA smoke JS error: ${message}`, "");
+  }, { once: true });
+
+  window.addEventListener("unhandledrejection", function (event) {
+    const reason = event && event.reason;
+    const detail = typeof reason === "string"
+      ? reason
+      : reason && reason.message
+        ? reason.message
+        : "Unhandled promise rejection during QA smoke.";
+    stamp("fail", `QA smoke rejection: ${detail}`, "");
+  }, { once: true });
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", function () {
+      window.setTimeout(runSmoke, 60);
+    }, { once: true });
+  } else {
+    window.setTimeout(runSmoke, 60);
+  }
+})();
+</script>
+</body>
+</html>
